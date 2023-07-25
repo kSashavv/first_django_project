@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% for ar in w %}
+        <div class="main_div">
+            <article>
+                <header>
+                    <h2>{{ ar.title }}</h2>
+                    <p class="meta">{{ ar.date_posted }} {{ ar.author }}</p>
+                </header>
+                <p class="cat"><a href="{{ cat.get_absolute_url }}">{{ ar.cat }}</a></p>
+                <p class="main_text">{{ ar.content|linebreaks|truncatewords:150 }}</p>
+                <p class="read"><a href="{{ ar.get_absolute_url }}">Читать статью</a></p>
+            </article>
+        </div>
+    {% endfor %}
+
+{% endblock content %}

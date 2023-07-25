@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/s.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% block menu %}
+    <nav>
+    <ul>
+            <li><a href="{% url 'blog' %}">Блог</a></li>
+            <li><a href="{% url 'create_article' %}">Добавить статью</a></li>
+            <li><a href="{% url 'cat' %}">Все категории</a></li>
+    </ul>
+  </nav>
+    {% endblock menu %}
+
+{% block content %}
+{% endblock content %}
+
+{% block footer %}
+<footer>
+    <p>© 2023 Мой проект Django. Все права защищены.</p>
+</footer>
+{% endblock footer %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static '/app.css' %}">
+</head>
+ <div class="container">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Отправить статью</button>
+  </form>
+{% endblock content %}
+
+     {% block footer %}
+     {% endblock footer %}

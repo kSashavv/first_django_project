@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<nav>
+    {% for c in cat %}
+    <ul>
+            <li><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></li>
+    </ul>
+    {% endfor %}
+  </nav>
+{% endblock content %}

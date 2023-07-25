@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="main_div">
+            <article>
+                <header>
+                    <h2>{{ article.title }}</h2>
+                    <p class="cat">{{ article.cat }}</p>
+                    <p class="meta">{{ article.date_posted }} {{ article.author }}</p>
+                </header>
+                <p class="main_text">{{ article.content|linebreaks }}</p>
+            </article>
+        </div>
+{% endblock content %}
